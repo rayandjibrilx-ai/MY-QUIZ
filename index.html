@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Quiz</title>
+    <style>
+      :root {
+        --bg: #f5f7fb;
+        --card: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --primary: #2563eb;
+        --correct: #22c55e;
+        --wrong: #ef4444;
+        --border: #dbe3f0;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #eef4ff, #f7f9fc);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 24px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        padding: 28px;
+      }
+
+      h1 {
+        margin-top: 0;
+        text-align: center;
+      }
+
+      .progress {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      .question {
+        font-size: 1.2rem;
+        margin-bottom: 18px;
+        line-height: 1.5;
+      }
+
+      .options {
+        display: grid;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .option-btn {
+        width: 100%;
+        text-align: left;
+        border: 1px solid var(--border);
+        background: #fff;
+        color: var(--text);
+        padding: 14px 16px;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .option-btn:hover:not(:disabled) {
+        border-color: var(--primary);
+        background: #f8fbff;
+      }
+
+      .option-btn:disabled {
+        cursor: not-allowed;
+        opacity: 0.95;
+      }
+
+      .option-btn.correct {
+        background: rgba(34, 197, 94, 0.12);
+        border-color: var(--correct);
+        color: #166534;
+      }
+
+      .option-btn.wrong {
+        background: rgba(239, 68, 68, 0.10);
+        border-color: var(--wrong);
+        color: #991b1b;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 22px;
+      }
+
+      .btn {
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 18px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .score {
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
+      .result {
+        margin-top: 18px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>Football Quiz</h1>
+        <div id="quiz"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
